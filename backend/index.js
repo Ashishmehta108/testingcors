@@ -26,6 +26,19 @@ const generateRefreshToken = (user) => {
     return jwt.sign(user, REFRESH_TOKEN_SECRET, { expiresIn: '7d' });
 };
 
+app.get("/api/check-auth", (req, res) => {
+    const token = req.cookies['access_token'];
+    if (!token) return res.sendStatus(401);
+
+    try {
+        const user = jwt.verify(token, ACCESS_TOKEN_SECRET);
+        return res.json({ user, token });
+    } catch (err) {
+        return res.sendStatus(403);
+    }
+});
+
+
 app.post("/api/login", (req, res) => {
     const user = { id: req.body.id, username: req.body.username };
 
