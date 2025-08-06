@@ -10,7 +10,7 @@ export default function DashboardPage() {
         console.log(process.env.NEXT_PUBLIC_BACKEND_ORIGIN)
         const checkAuth = async () => {
             try {
-                const res = await fetch(`${process.env.BACKEND_ORIGIN}/api/check-auth`, {
+                const res = await fetch(`${process.env.BACKEND_ORIGIN}api/check-auth`, {
                     credentials: "include", // ✅ send cookies
                 });
                 console.log(await res.json())
