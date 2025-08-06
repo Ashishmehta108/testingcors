@@ -9,7 +9,7 @@ export default function DashboardPage() {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const res = await fetch("http://localhost:5000/api/check-auth", {
+                const res = await fetch(`${process.env.BACKEND_ORIGIN}/api/check-auth`, {
                     credentials: "include", // ✅ send cookies
                 });
                 console.log(await res.json())
