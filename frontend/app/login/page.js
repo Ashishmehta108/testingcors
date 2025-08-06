@@ -8,7 +8,7 @@ export default function LoginPage() {
 
     const handleLogin = async () => {
 
-        console.log(process.env)
+        console.log(process.env, process.env.NEXT_PUBLIC_BACKEND_ORIGIN)
         try {
             const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ORIGIN}/api/login`, {
                 method: "POST",
