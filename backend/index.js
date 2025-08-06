@@ -27,7 +27,8 @@ const generateRefreshToken = (user) => {
 };
 
 app.get("/api/check-auth", (req, res) => {
-    const token = req.cookies['access_token'];
+    console.log(req.cookies)
+    const token = req.cookies.access_token;
     if (!token) return res.sendStatus(401);
 
     try {
