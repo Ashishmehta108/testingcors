@@ -7,6 +7,8 @@ export default function LoginPage() {
     const [username, setUsername] = useState("");
 
     const handleLogin = async () => {
+
+        console.log(process.env)
         try {
             const res = await fetch(`${process.env.BACKEND_ORIGIN}/api/login`, {
                 method: "POST",
@@ -41,7 +43,7 @@ export default function LoginPage() {
             />
             <button
                 onClick={handleLogin}
-                className="bg-blue-600 text-white px-4 py-2 rounded"
+                className="bg-blue-600 text-white px-4 py-2 rounded cursor-pointer"
             >
                 Login
             </button>
