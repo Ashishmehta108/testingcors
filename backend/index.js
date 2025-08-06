@@ -48,12 +48,14 @@ app.post("/api/login", (req, res) => {
 
     res.cookie('access_token', accessToken,
         {
-            httpOnly: true, secure: true
+            httpOnly: true, secure: true,
+            sameSite: 'none'
         }
     );
     res.cookie('refresh_token', refreshToken,
         {
-            httpOnly: true, secure: true
+            httpOnly: true, secure: true,
+            sameSite: 'none'
         }
     );
 
