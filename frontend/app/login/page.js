@@ -8,7 +8,7 @@ export default function LoginPage() {
 
     const handleLogin = async () => {
         try {
-            const res = await fetch("http://localhost:5000/api/login", {
+            const res = await fetch(`${process.env.BACKEND_ORIGIN}/api/login`, {
                 method: "POST",
                 credentials: "include", // ✅ IMPORTANT: to send/receive cookies
                 headers: {
