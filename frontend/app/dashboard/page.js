@@ -7,7 +7,7 @@ export default function DashboardPage() {
     const [authenticated, setAuthenticated] = useState(null);
 
     useEffect(() => {
-        console.log(process.env.BACKEND_ORIGIN)
+        console.log(process.env.NEXT_PUBLIC_BACKEND_ORIGIN)
         const checkAuth = async () => {
             try {
                 const res = await fetch(`${process.env.BACKEND_ORIGIN}/api/check-auth`, {

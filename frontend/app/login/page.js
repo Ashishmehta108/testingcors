@@ -10,7 +10,7 @@ export default function LoginPage() {
 
         console.log(process.env)
         try {
-            const res = await fetch(`${process.env.BACKEND_ORIGIN}/api/login`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_ORIGIN}/api/login`, {
                 method: "POST",
                 credentials: "include", // ✅ IMPORTANT: to send/receive cookies
                 headers: {
